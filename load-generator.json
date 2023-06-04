@@ -1,6 +1,6 @@
 {
-  "pause": 300,
-  "workers": 10,
+  "pause": 2000,
+  "workers": 4,
   "timeout": 1000,
   "urls": [
     "http://localhost:3000/",
