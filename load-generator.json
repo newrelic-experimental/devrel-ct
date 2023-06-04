@@ -1,0 +1,11 @@
+{
+  "pause": 300,
+  "workers": 10,
+  "timeout": 1000,
+  "urls": [
+    "http://localhost:3000/",
+    "http://localhost:3000/slow",
+    "http://localhost:3000/fast"
+ ]
+}
+
