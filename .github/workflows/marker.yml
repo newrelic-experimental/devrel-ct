@@ -13,6 +13,6 @@ jobs:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           region: US
           guid: ${{ secrets.NEW_RELIC_DEPLOYMENT_ENTITY_GUID }}
-          version: 4
+          version: 4.0.0
           user: ${{ github.actor }}
           description: Triggered By GitHub Actions
