@@ -5,7 +5,9 @@
   "urls": [
     "http://localhost:3000/",
     "http://localhost:3000/slow",
-    "http://localhost:3000/fast"
+    "http://localhost:3000/fast",
+    "http://localhost:3000/error",
+    "http://localhost:3000/break"
  ]
 }
 
