@@ -1,6 +1,7 @@
+---
 name: Deploy
-on: [push]
-
+on:
+  - push
 jobs:
   newrelic:
     runs-on: ubuntu-latest
@@ -10,8 +11,8 @@ jobs:
         uses: newrelic/deployment-marker-action@v2.2.0
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
-          region: "US"
+          region: US
           guid: ${{ secrets.NEW_RELIC_DEPLOYMENT_ENTITY_GUID }}
-          version: 4.0
-          user: "${{ github.actor }}"
-					description: Triggered By GitHub Actions
+          version: 4
+          user: ${{ github.actor }}
+          description: Triggered By GitHub Actions
