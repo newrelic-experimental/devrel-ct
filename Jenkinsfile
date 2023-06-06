@@ -23,10 +23,18 @@ pipeline {
                     step([$class: 'NewRelicDeploymentNotifier',
                         notifications: [[
                             apiKey:  "${nrApiCredentialsGuid}",
+                            applicationId: '',
                             user: "jenkins",
                             version: "6.0.0",
                             european: "${nrIsEuropean}",
-                            entityGuid: "${nrEntityGuid}"
+                            entityGuid: "${nrEntityGuid}",
+                            changelog: '',
+                            commit: '',
+                            deeplink: '',
+                            deploymentType: '',
+                            description: '',
+                            groupId: '',
+                            timestamp: ''
                     ]]
                 ])
                 }
