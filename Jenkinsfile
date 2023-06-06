@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        USER_KEY = credentials('USER_KEY')
+        API_KEY = credentials('API_KEY')
         entityGuid = 'MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw'
     }
     stages {
@@ -21,10 +21,10 @@ pipeline {
                 script {
                     step([$class: 'NewRelicDeploymentNotifier',
                         notifications: [[
-                            // apiKey: '$USER_KEY',
+                            apiKey: '$API_KEY',
                             version: '6.0.0',
                             description: 'triggered by jenkins',
-                            // entityGuid: "MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw"
+                            entityGuid: "MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw"
                     ]]
                 ])
                 }
