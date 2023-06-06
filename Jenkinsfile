@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    enviornment {
+    environment {
         USER_KEY = credentials('apiKey')
     }
     stages {
@@ -17,14 +17,16 @@ pipeline {
         }
         stage("Post to NR") {
             steps {
-                script([$class: 'NewRelicDeploymentNotifier',
-                notifications: [[
-                    apiKey: $USER_KEY,
-                    version: '6.0.0',
-                    description: 'triggered by jenkins',
-                    entityGuid: 'MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw'
-                ]]
+                script {
+                    step([$class: 'NewRelicDeploymentNotifier',
+                        notifications: [[
+                        apiKey: $USER_KEY,
+                        version: '6.0.0',
+                        description: 'triggered by jenkins',
+                        entityGuid: 'MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw'
+                    ]]
                 ])
+                }
             }
         }
     }
