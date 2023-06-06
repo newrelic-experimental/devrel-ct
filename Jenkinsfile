@@ -20,9 +20,9 @@ pipeline {
                 script([$class: 'NewRelicDeploymentNotifier',
                 notifications: [[
                     apiKey: $USER_KEY,
-                    version: 6.0.0,
-                    description: "triggered by jenkins",
-                    entityGuid: "MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw"
+                    version: '6.0.0',
+                    description: 'triggered by jenkins',
+                    entityGuid: 'MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw'
                 ]]
                 ])
             }
