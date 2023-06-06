@@ -24,7 +24,7 @@ pipeline {
                         apiKey: '$USER_KEY',
                         version: '6.0.0',
                         description: 'triggered by jenkins',
-                        entityGuid: "${entityGuid}"
+                        EntityGuid: "${entityGuid}"
                     ]]
                 ])
                 }
