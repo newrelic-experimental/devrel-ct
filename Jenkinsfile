@@ -1,8 +1,9 @@
 pipeline {
     agent any
     environment {
-        API_KEY = credentials('API_KEY')
-        entityGuid = 'MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw'
+        nrEntityGuid = 'MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw'
+        nrApiCredentialsGuid = '0790bcee-03ed-4c2f-bd0e-3640a1749101'
+        nrIsEuropean = false
     }
     stages {
         stage("build") {
@@ -21,19 +22,10 @@ pipeline {
                 script {
                     step([$class: 'NewRelicDeploymentNotifier',
                         notifications: [[
-                            apiKey: '$API_KEY',
-                            applicationId: '',
-                            changelog: '',
-                            commit: '',
-                            deeplink: '',
-                            deploymentType: '',
-                            groupId: '',
-                            timestamp: '',
-                            user: 'jenkins',
-                            version: '6.0.0',
-                            revision: '',
-                            description: 'triggered by jenkins',
-                            entityGuid: "${entityGuid}"
+                            apiKey:  "${nrApiCredentialsGuid}",
+                            user: "jenkins",
+                            version: "6.0.0",
+                            entityGuid: "${nrEntityGuid}"
                     ]]
                 ])
                 }
