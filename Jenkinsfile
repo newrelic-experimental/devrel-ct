@@ -25,6 +25,7 @@ pipeline {
                             apiKey:  "${nrApiCredentialsGuid}",
                             user: "jenkins",
                             version: "6.0.0",
+                            european: "${nrIsEuropean}",
                             entityGuid: "${nrEntityGuid}"
                     ]]
                 ])
