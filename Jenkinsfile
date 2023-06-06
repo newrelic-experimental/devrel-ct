@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         USER_KEY = credentials('USER_KEY')
-        GUID = credentials('GUID')
+        entityGuid = 'MzY0NzUyM3xBUE18QVBQTElDQVRJT058MTY5NjI2ODY4Mw'
     }
     stages {
         stage("build") {
@@ -24,7 +24,7 @@ pipeline {
                         apiKey: '$USER_KEY',
                         version: '6.0.0',
                         description: 'triggered by jenkins',
-                        entityGuid: '$GUID'
+                        entityGuid: "${entityGuid}"
                     ]]
                 ])
                 }
